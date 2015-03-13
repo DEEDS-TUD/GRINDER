@@ -1,0 +1,19 @@
+# Eclipse config files
+.metadata
+.classpath
+.settings
+.project
+.cproject
+
+# log files
+*.log
+
+# build files
+target
+Debug
+*.o
+*.exe
+
+# servers target component must not be ignored
+!server/core/src/main/java/de/grinder/target/
+!server/core/src/test/java/de/grinder/target/

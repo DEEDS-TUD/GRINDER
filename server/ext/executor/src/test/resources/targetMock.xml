@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<target>
+	<cue_abstraction>
+		<class>de.grinder.targetrunner.cue.CUEAbstractionMock</class>
+	</cue_abstraction>
+	<servers>
+		<server>
+			<class>de.grinder.targetrunner.servers.TCPServer</class>
+			<port>4444</port>
+		</server>
+	</servers>
+</target>
