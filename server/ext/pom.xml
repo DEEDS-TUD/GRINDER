@@ -18,8 +18,5 @@
     <module>database</module>
     <module>executor</module>
     <module>util</module>
-    <!-- Removed until module works correctly
-    <module>rest</module>
-     -->
   </modules>
 </project>
