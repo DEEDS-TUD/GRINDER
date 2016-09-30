@@ -14,8 +14,7 @@ public class Settings {
 
   private final Properties properties;
 
-  public static Settings getInstance() {
-    // TODO Implement thread safety
+  public static synchronized Settings getInstance() {
     if (null == instance) {
       instance = new Settings();
     }
