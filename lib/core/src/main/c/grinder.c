@@ -13,6 +13,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/* TODO: Make current restriction of the configuration size to 255 bytes configurable and add proper documentation */
+static const int CONFIG_SIZE = 255;
+
 /*
  * Data structure for storing the mapping of interceptors and injectors.
  * Currently, we use only a very simple mapping using a array and its indices,
@@ -25,8 +28,7 @@ static bool configured = false;
 
 static void setup(int id)
 {
-	/* Can I really restict the size of the configuration to 255 bytes? */
-	char configuration[255];
+	char configuration[CONFIG_SIZE];
 	get_configuration(configuration, sizeof(configuration));
 
 	errormodels[id]->configure(configuration);
