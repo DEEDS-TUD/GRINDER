@@ -7,12 +7,12 @@ import org.junit.Test;
 
 public class ExperimentRunTest {
 
-  @Test
-  public void testGetTestCase() {
-    final TestCase testCase = mock(TestCase.class);
-    final Campaign camp = mock(Campaign.class);
-    final ExperimentRun experimentRun = new ExperimentRun(testCase, camp);
+    @Test
+    public void testGetTestCase() {
+        final TestCase testCase = mock(TestCase.class);
+        final Campaign camp = mock(Campaign.class);
+        final ExperimentRun experimentRun = new ExperimentRun(testCase, camp);
 
-    assertEquals(testCase, experimentRun.getTestCase());
-  }
+        assertEquals(testCase, experimentRun.getTestCase());
+    }
 }

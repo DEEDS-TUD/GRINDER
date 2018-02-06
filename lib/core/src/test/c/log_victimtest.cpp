@@ -18,21 +18,21 @@ static int *foo;
 static Victim *v0;
 
 void log_victimtest::setUp() {
-  foo = (int *) malloc(sizeof(int));
-  *foo = 0;
+    foo = (int *) malloc(sizeof(int));
+    *foo = 0;
 
-  v0 = (Victim *) malloc(sizeof(Victim));
-  v0->interceptor_id = 0;
-  v0->location = (unsigned char *) foo;
-  v0->size = 4;
+    v0 = (Victim *) malloc(sizeof(Victim));
+    v0->interceptor_id = 0;
+    v0->location = (unsigned char *) foo;
+    v0->size = 4;
 }
 
 void log_victimtest::tearDown() {
-  free(foo);
-  free(v0);
+    free(foo);
+    free(v0);
 }
 
 void log_victimtest::test() {
-  logger.inject(v0);
-  CPPUNIT_ASSERT_EQUAL(*foo, 0);
+    logger.inject(v0);
+    CPPUNIT_ASSERT_EQUAL(*foo, 0);
 }

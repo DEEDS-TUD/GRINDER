@@ -18,55 +18,55 @@ import de.grinder.util.cue.CUEAbstraction;
 
 public class TargetControllerImplTest {
 
-  @Before
-  public void setUp() throws Exception {
-  }
+    @Before
+    public void setUp() throws Exception {
+    }
 
-  @Test
-  public void testTargetControllerImpl() {
-    final TargetControllerImpl targetController = new TargetControllerImpl();
+    @Test
+    public void testTargetControllerImpl() {
+        final TargetControllerImpl targetController = new TargetControllerImpl();
 
-    assertNull(targetController.getCueAbstraction());
+        assertNull(targetController.getCueAbstraction());
 
-    final Collection<Listener> listeners = targetController.getListeners();
-    assertNotNull(listeners);
-    assertTrue(listeners.isEmpty());
-  }
+        final Collection<Listener> listeners = targetController.getListeners();
+        assertNotNull(listeners);
+        assertTrue(listeners.isEmpty());
+    }
 
-  @Test
-  public void testRegisterAndUnregisterListener() {
-    final TargetControllerImpl targetController = new TargetControllerImpl();
-    final Listener listener = mock(Listener.class);
+    @Test
+    public void testRegisterAndUnregisterListener() {
+        final TargetControllerImpl targetController = new TargetControllerImpl();
+        final Listener listener = mock(Listener.class);
 
-    // Register listener
-    targetController.registerListener(listener);
+        // Register listener
+        targetController.registerListener(listener);
 
-    Collection<Listener> listeners = targetController.getListeners();
-    assertEquals(1, listeners.size());
+        Collection<Listener> listeners = targetController.getListeners();
+        assertEquals(1, listeners.size());
 
-    verify(listener).setMessageHandler(targetController);
+        verify(listener).setMessageHandler(targetController);
 
-    // Unregister listener
-    targetController.unregisterListener(listener);
-    listeners = targetController.getListeners();
-    assertEquals(0, listeners.size());
-  }
+        // Unregister listener
+        targetController.unregisterListener(listener);
+        listeners = targetController.getListeners();
+        assertEquals(0, listeners.size());
+    }
 
-  @Test
-  @Ignore
-  public void testExperimentLivecycle() {
-    final TargetControllerImpl targetController = new TargetControllerImpl();
+    @Test
+    @Ignore
+    public void testExperimentLivecycle() {
+        final TargetControllerImpl targetController = new TargetControllerImpl();
 
-    final CUEAbstraction cueAbstraction = mock(CUEAbstraction.class);
-    targetController.setCueAbstraction(cueAbstraction);
+        final CUEAbstraction cueAbstraction = mock(CUEAbstraction.class);
+        targetController.setCueAbstraction(cueAbstraction);
 
-    targetController.start();
-    verify(cueAbstraction).start();
+        targetController.start();
+        verify(cueAbstraction).start();
 
-    targetController.reset();
-    verify(cueAbstraction).reset();
+        targetController.reset();
+        verify(cueAbstraction).reset();
 
-    targetController.stop();
-    verify(cueAbstraction).stop();
-  }
+        targetController.stop();
+        verify(cueAbstraction).stop();
+    }
 }

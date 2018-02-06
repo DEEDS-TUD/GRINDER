@@ -28,17 +28,17 @@ static bool configured = false;
 
 static void setup(int id)
 {
-	char configuration[CONFIG_SIZE];
-	get_configuration(configuration, sizeof(configuration));
+    char configuration[CONFIG_SIZE];
+    get_configuration(configuration, sizeof(configuration));
 
-	errormodels[id]->configure(configuration);
-	configured = true;
+    errormodels[id]->configure(configuration);
+    configured = true;
 }
 
 injector_t get_injector(int id)
 {
-	if (!configured)
-		setup(id);
+    if (!configured)
+        setup(id);
 
-	return errormodels[id]->inject;
+    return errormodels[id]->inject;
 }

@@ -4,10 +4,10 @@ import de.grinder.executor.MessageHandler;
 
 public abstract class AbstractListener implements Listener {
 
-  protected MessageHandler handler;
+    protected MessageHandler handler;
 
-  @Override
-  public void setMessageHandler(final MessageHandler handler) {
-    this.handler = handler;
-  }
+    @Override
+    public void setMessageHandler(final MessageHandler handler) {
+        this.handler = handler;
+    }
 }

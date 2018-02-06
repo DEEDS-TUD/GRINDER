@@ -9,29 +9,29 @@ import org.junit.Test;
 
 public class SettingsTest {
 
-  @Test
-  public void testGetInstance() {
-    final Settings settings = Settings.getInstance();
-    final Settings settings1 = Settings.getInstance();
+    @Test
+    public void testGetInstance() {
+        final Settings settings = Settings.getInstance();
+        final Settings settings1 = Settings.getInstance();
 
-    assertNotNull("Settings is not null", settings);
-    assertTrue("Only one instance of Settings", settings == settings1);
-  }
+        assertNotNull("Settings is not null", settings);
+        assertTrue("Only one instance of Settings", settings == settings1);
+    }
 
-  @Test
-  public void testGetSetting() {
-    final Settings settings = Settings.getInstance();
-    final String defaultConfigPath = settings.getSetting("defaultConfigPath");
+    @Test
+    public void testGetSetting() {
+        final Settings settings = Settings.getInstance();
+        final String defaultConfigPath = settings.getSetting("defaultConfigPath");
 
-    assertEquals("Correct defaultConfigPath loaded", ".", defaultConfigPath);
-  }
+        assertEquals("Correct defaultConfigPath loaded", ".", defaultConfigPath);
+    }
 
-  @Test
-  public void testGetSetting_missingSetting() {
-    final Settings settings = Settings.getInstance();
-    final String missingSetting = settings.getSetting("missingSetting");
+    @Test
+    public void testGetSetting_missingSetting() {
+        final Settings settings = Settings.getInstance();
+        final String missingSetting = settings.getSetting("missingSetting");
 
-    assertNull("Missing setting is null", missingSetting);
-  }
+        assertNull("Missing setting is null", missingSetting);
+    }
 
 }

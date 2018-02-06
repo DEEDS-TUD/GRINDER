@@ -11,9 +11,9 @@
 #include <stddef.h>
 
 struct victim {
-	unsigned int interceptor_id; /* Creator of the Victim */
-	unsigned char *location;     /* First byte of the injection location */
-	size_t size;                 /* Size of the injection location */
+    unsigned int interceptor_id; /* Creator of the Victim */
+    unsigned char *location;     /* First byte of the injection location */
+    size_t size;                 /* Size of the injection location */
 };
 
 typedef int (*injector_t)(const struct victim *);

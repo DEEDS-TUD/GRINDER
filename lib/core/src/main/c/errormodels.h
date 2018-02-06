@@ -11,9 +11,9 @@
 #include "grinder.h"
 
 struct error_model {
-  injector_t inject;               /* Inject fault */
-  void (*configure) (const char*); /* Configure the error model */
-  const char *name;                /* Name of the error model */
+    injector_t inject;               /* Inject fault */
+    void (*configure) (const char*); /* Configure the error model */
+    const char *name;                /* Name of the error model */
 };
 
 extern struct error_model bitflip;

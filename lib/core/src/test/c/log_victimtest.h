@@ -14,19 +14,19 @@
 
 class log_victimtest: public CppUnit::TestFixture {
 public:
-  static CppUnit::Test *suite() {
-    CppUnit::TestSuite *suite = new CppUnit::TestSuite("log_victimtest");
+    static CppUnit::Test *suite() {
+        CppUnit::TestSuite *suite = new CppUnit::TestSuite("log_victimtest");
 
-    suite->addTest(
-        new CppUnit::TestCaller<log_victimtest>("Test", &log_victimtest::test));
-    return suite;
-  }
+        suite->addTest(
+            new CppUnit::TestCaller<log_victimtest>("Test", &log_victimtest::test));
+        return suite;
+    }
 
-  void setUp();
-  void tearDown();
+    void setUp();
+    void tearDown();
 
 private:
-  void test();
+    void test();
 };
 
 #endif /* LOG_VICTIMTEST_H_ */

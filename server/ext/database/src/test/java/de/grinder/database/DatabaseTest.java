@@ -13,32 +13,32 @@ import org.junit.Test;
 
 public class DatabaseTest {
 
-  @Test
-  public void testGetEntityManager() {
-    try {
-      final EntityManager em = Database.getEntityManager();
-      assertNotNull("EntityManager should not be null.", em);
-    } catch (final Exception e) {
-      fail("Exception should not occur: " + e);
+    @Test
+    public void testGetEntityManager() {
+        try {
+            final EntityManager em = Database.getEntityManager();
+            assertNotNull("EntityManager should not be null.", em);
+        } catch (final Exception e) {
+            fail("Exception should not occur: " + e);
+        }
     }
-  }
 
-  @Ignore("Test cases should reduce side effects on database")
-  @Test
-  public void testAddTarget() {
-    final Target expected = createTarget();
-    Database.instance().addTarget(expected);
+    @Ignore("Test cases should reduce side effects on database")
+    @Test
+    public void testAddTarget() {
+        final Target expected = createTarget();
+        Database.instance().addTarget(expected);
 
-    final Collection<Target> targets = Database.instance().getTargets();
-    assertEquals(1, targets.size());
-    final Target actual = targets.iterator().next();
-    assertEquals(expected.getConfiguration(), actual.getConfiguration());
-  }
+        final Collection<Target> targets = Database.instance().getTargets();
+        assertEquals(1, targets.size());
+        final Target actual = targets.iterator().next();
+        assertEquals(expected.getConfiguration(), actual.getConfiguration());
+    }
 
-  private Target createTarget() {
-    final Target target = new Target();
-    target.setName("TestTarget");
-    target.setConfiguration("TestConfiguration");
-    return target;
-  }
+    private Target createTarget() {
+        final Target target = new Target();
+        target.setName("TestTarget");
+        target.setConfiguration("TestConfiguration");
+        return target;
+    }
 }

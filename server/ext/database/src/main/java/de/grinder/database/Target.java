@@ -8,46 +8,46 @@ import javax.persistence.Table;
 
 /**
  * The persistent representation of a target system.
- * 
- * 
+ *
+ *
  */
 @Entity
 @Table(name = "targets")
 public class Target {
 
-  @Id
-  @GeneratedValue
-  private int id;
-  private String name;
+    @Id
+    @GeneratedValue
+    private int id;
+    private String name;
 
-  @Column(length = 4096)
-  private String configuration;
+    @Column(length = 4096)
+    private String configuration;
 
-  public Target() {
-    super();
-  }
+    public Target() {
+        super();
+    }
 
-  public Target(final int id) {
-    this.id = id;
-  }
+    public Target(final int id) {
+        this.id = id;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setName(final String name) {
-    this.name = name;
-  }
+    public void setName(final String name) {
+        this.name = name;
+    }
 
-  public String getConfiguration() {
-    return configuration;
-  }
+    public String getConfiguration() {
+        return configuration;
+    }
 
-  public void setConfiguration(final String configuration) {
-    this.configuration = configuration;
-  }
+    public void setConfiguration(final String configuration) {
+        this.configuration = configuration;
+    }
 }

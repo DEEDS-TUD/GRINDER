@@ -9,7 +9,8 @@ import de.grinder.executor.servers.TCPServerTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({ TargetControllerImplTest.class, TargetFactoryImplTest.class,
-    TCPServerTest.class, MessageStreamTest.class })
+                TCPServerTest.class, MessageStreamTest.class
+              })
 public class AllTests {
 
 }

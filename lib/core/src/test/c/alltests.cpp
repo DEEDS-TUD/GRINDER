@@ -12,9 +12,9 @@
 
 int main( int argc, char **argv)
 {
-  CppUnit::TextUi::TestRunner runner;
-  runner.addTest(bitfliptest::suite());
-  runner.addTest(log_victimtest::suite());
-  bool wasSuccessful = runner.run();
-  return wasSuccessful;
+    CppUnit::TextUi::TestRunner runner;
+    runner.addTest(bitfliptest::suite());
+    runner.addTest(log_victimtest::suite());
+    bool wasSuccessful = runner.run();
+    return wasSuccessful;
 }
